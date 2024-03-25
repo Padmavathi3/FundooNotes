@@ -1,0 +1,12 @@
+D:\C#Projects\FundooNotes\RepositoryLayer\bin\Debug\net8.0\RepositoryLayer.deps.json
+D:\C#Projects\FundooNotes\RepositoryLayer\bin\Debug\net8.0\RepositoryLayer.dll
+D:\C#Projects\FundooNotes\RepositoryLayer\bin\Debug\net8.0\RepositoryLayer.pdb
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.csproj.AssemblyReference.cache
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.AssemblyInfoInputs.cache
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.AssemblyInfo.cs
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.dll
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\refint\RepositoryLayer.dll
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.pdb
+D:\C#Projects\FundooNotes\RepositoryLayer\obj\Debug\net8.0\ref\RepositoryLayer.dll
