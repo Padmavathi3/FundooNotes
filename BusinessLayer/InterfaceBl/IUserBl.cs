@@ -32,5 +32,7 @@ namespace BusinessLayer.InterfaceBl
         public Task<String> ChangePasswordRequest(string Email);
         public Task<string> ChangePassword(string otp, string password);
 
+        public Task<IEnumerable<User>> GetUsersByToken(string token);
+
     }
 }

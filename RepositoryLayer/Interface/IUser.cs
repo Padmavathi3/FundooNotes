@@ -31,5 +31,8 @@ namespace RepositoryLayer.Interface
 
         public Task<String> ChangePasswordRequest(string Email);
         public Task<string> ChangePassword(string otp, string password);
+
+        //get details baseod on token
+        public Task<IEnumerable<User>> GetUsersByToken(string token);
     }
 }

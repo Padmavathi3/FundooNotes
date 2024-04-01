@@ -17,16 +17,6 @@
   },
   {
     "ContainingType": "FundooNotes.Controllers.UserController",
-    "Method": "GetUsersList",
-    "RelativePath": "api/User/Display user Details",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FundooNotes.Controllers.UserController",
     "Method": "ChangePasswordRequest",
     "RelativePath": "api/User/forgot password/{Email}",
     "HttpMethod": "PUT",
@@ -44,7 +34,7 @@
   {
     "ContainingType": "FundooNotes.Controllers.UserController",
     "Method": "GetUsersByEmail",
-    "RelativePath": "api/User/getByEmail",
+    "RelativePath": "api/User/getByEmailUsingRedis",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -55,6 +45,32 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FundooNotes.Controllers.UserController",
+    "Method": "GetUsersByToken",
+    "RelativePath": "api/User/GetByToken",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FundooNotes.Controllers.UserController",
+    "Method": "GetUsersList",
+    "RelativePath": "api/User/GetUsersList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -128,6 +144,11 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "topic",
+        "Type": "System.String",
+        "IsRequired": false
+      },
       {
         "Name": "updateDto",
         "Type": "RepositoryLayer.Entities.User",
@@ -232,27 +253,6 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FundooNotes.Controllers.UserNoteController",
-    "Method": "MoveToTrash",
-    "RelativePath": "api/UserNote/MoveToTrash",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "emailid",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []

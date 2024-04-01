@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.Context;
 using RepositoryLayer.CustomExceptions;
 using RepositoryLayer.Entities;
@@ -8,7 +10,9 @@ using RepositoryLayer.NestdMethodsFolder;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -21,33 +25,38 @@ namespace RepositoryLayer.Service
         private static string otp;
         private static string mailid;
         private static User entity;
+        
         public UserService(DapperContext context)
         {
             _context = context;
+            
         }
 
         //Logic for inserting records
         public async Task Insertion(string firstname, string lastname, string emailid, string password)
         {
-            if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname) || string.IsNullOrEmpty(emailid) || string.IsNullOrEmpty(password))
-            {
-                throw new ArgumentsException("All parameters (firstname, lastname, emailid, password) are required..........");
-            }
+           
+                if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname) || string.IsNullOrEmpty(emailid) || string.IsNullOrEmpty(password))
+                {
+                    throw new ArgumentsException("All parameters (firstname, lastname, emailid, password) are required..........");
+                }
 
-            var query = "insert into Person(FirstName,LastName,EmailId,Password) values(@FirstName,@LastName,@EmailId,@Password)";
+                var query = "insert into Person(FirstName,LastName,EmailId,Password) values(@FirstName,@LastName,@EmailId,@Password)";
 
-            string encryptedPassword = NestedMethodsClass.EncryptPassword(password);
+                string encryptedPassword = NestedMethodsClass.EncryptPassword(password);
 
-            var parameters = new DynamicParameters();
-            parameters.Add("@FirstName", firstname, DbType.String);
-            parameters.Add("@LastName", lastname, DbType.String);
-            parameters.Add("@EmailId", emailid, DbType.String);
-            parameters.Add("@Password", encryptedPassword, DbType.String);
+                var parameters = new DynamicParameters();
+                parameters.Add("@FirstName", firstname, DbType.String);
+                parameters.Add("@LastName", lastname, DbType.String);
+                parameters.Add("@EmailId", emailid, DbType.String);
+                parameters.Add("@Password", encryptedPassword, DbType.String);
 
-            using (var connection = _context.CreateConnection())
-            {
-                await connection.ExecuteAsync(query, parameters);
-            }
+                using (var connection = _context.CreateConnection())
+                {
+                    await connection.ExecuteAsync(query, parameters);
+                }
+            
+           
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -63,6 +72,7 @@ namespace RepositoryLayer.Service
                 var person = await connection.QueryAsync<User>(query);
                 if (person != null)
                 {
+                    
                     return person.ToList();
                 }
                 else
@@ -116,7 +126,7 @@ namespace RepositoryLayer.Service
 
         //Get the user details based on email
 
-        public async Task<IEnumerable<User>>GetUsersByEmail(string email)
+        public async Task<IEnumerable<User>> GetUsersByEmail(string email)
         {
             var query = "select * from Person WHERE EmailId = @EmailId";
             using (var connection = _context.CreateConnection())
@@ -258,5 +268,38 @@ namespace RepositoryLayer.Service
             return Task.FromResult("password not changed");
 
         }
+        //----------------------------------------------------------------------------------------------------------------------------------
+
+        public async Task<IEnumerable<User>> GetUsersByToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("HJWD248JBFKHGSKNasdfghjkl!@#$%^&*3456789!nr")),
+                ValidateIssuer = false,
+                ValidateAudience = false
+            };
+
+            try
+            {
+                // Validate token and extract claims
+                ClaimsPrincipal claimsPrincipal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken validatedToken);
+                string userEmail = claimsPrincipal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+
+                // Retrieve user from database based on email
+                /*var users = await GetUsersByEmail(email);
+                return users;*/
+                var users = await GetUsersByEmail(userEmail);
+                return users;
+            }
+            catch (Exception ex)
+            {
+                // Handle token validation errors
+                // Log the exception
+                throw;
+            }
+        }
     }
+    
 }

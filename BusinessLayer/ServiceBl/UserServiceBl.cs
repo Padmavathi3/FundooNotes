@@ -67,5 +67,9 @@ namespace BusinessLayer.ServiceBl
             return person.ChangePassword(otp, password);
         }
 
+        public Task<IEnumerable<User>> GetUsersByToken(string token)
+        {
+            return person.GetUsersByToken(token);
+        }
     }
 }

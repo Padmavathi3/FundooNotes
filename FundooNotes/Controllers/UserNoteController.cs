@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.InterfaceBl;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryLayer.Entities;
@@ -38,6 +39,7 @@ namespace FundooNotes.Controllers
 
         //Display user note details details based on id
         [HttpGet("getById/{id}")]
+        [Authorize]
         public async Task<IActionResult> GetAllNotes(string id)
         {
             try
@@ -85,7 +87,7 @@ namespace FundooNotes.Controllers
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpPut("MoveToTrash")]
+       /* [HttpPut("MoveToTrash")]
         public async Task<IActionResult> MoveToTrash(string id, string emailid)
         {
             try
@@ -98,6 +100,6 @@ namespace FundooNotes.Controllers
                 
                 return BadRequest(ex.Message);
             }
-        }
+        }*/
     }
 }
