@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.InterfaceBl;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 
 namespace FundooNotes.Controllers
 {
@@ -9,21 +9,21 @@ namespace FundooNotes.Controllers
     [ApiController]
     public class UserNoteLabelController : ControllerBase
     {
-        private readonly IUserNoteLabelBl userdl3;
+        private readonly IUserNoteLabelBl labelbl;
         private readonly IConfiguration configuration;
-        public UserNoteLabelController(IUserNoteLabelBl userdl3, IConfiguration configuration)
+        public UserNoteLabelController(IUserNoteLabelBl labelbl, IConfiguration configuration)
         {
-            this.userdl3 = userdl3;
+            this.labelbl = labelbl;
             this.configuration = configuration;
         }
 
         //----------------------------------------------------------------------------------------------
-        [HttpPost("Create Label")]
+        [HttpPost("AddLabel")]
         public async Task<IActionResult> CreateLabel(UserNoteLabel updateDto3)
         {
             try
             {
-                await userdl3.CreateLabel(updateDto3.NoteId, updateDto3.LabelName,updateDto3.Email);
+                await labelbl.CreateLabel(updateDto3.NoteId, updateDto3.LabelName,updateDto3.Email);
                 return Ok(updateDto3);
             }
             catch (Exception ex)
@@ -35,12 +35,12 @@ namespace FundooNotes.Controllers
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpGet("label details")]
+        [HttpGet("GetAllLabels")]
         public async Task<IActionResult> GetUserNoteLabels()
         {
             try
             {
-                var values = await userdl3.GetUserNoteLabels();
+                var values = await labelbl.GetUserNoteLabels();
                 return Ok(values);
             }
             catch (Exception ex)
@@ -51,12 +51,12 @@ namespace FundooNotes.Controllers
         }
         //--------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpPut("update Label")]
+        [HttpPut("UpdateLabelNameById")]
         public async Task<IActionResult> UpdateName(string name, string id)
         {
             try
             {
-                return Ok(await userdl3.UpdateName(name,id));
+                return Ok(await labelbl.UpdateName(name,id));
                 //return Ok("User password updated successfully");
             }
             catch (Exception ex)
@@ -67,13 +67,13 @@ namespace FundooNotes.Controllers
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpDelete("delete label")]
+        [HttpDelete("DeleteLabelNameById")]
         public async Task<IActionResult> DeleteLabel(string name, string id)
         {
             try
             {
                 //await userdl.DeleteUserByEmail(email);
-                return Ok(await userdl3.DeleteLabel(name,id));
+                return Ok(await labelbl.DeleteLabel(name,id));
 
             }
             catch (Exception ex)

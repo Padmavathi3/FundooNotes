@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.InterfaceBl;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 
 namespace FundooNotes.Controllers
 {
@@ -9,40 +9,39 @@ namespace FundooNotes.Controllers
     [ApiController]
     public class UserNoteController : ControllerBase
     {
-        private readonly IUserNoteBl userdl1;
+        private readonly IUserNoteBl notebl;
         private readonly IConfiguration configuration;
-        public UserNoteController(IUserNoteBl userdl1, IConfiguration configuration)
+        public UserNoteController(IUserNoteBl notebl, IConfiguration configuration)
         {
-            this.userdl1 = userdl1;
+            this.notebl = notebl;
             this.configuration = configuration;
         }
 
         //----------------------------------------------------------------------------------------------
 
-        [HttpPost("Create Note")]
+        [HttpPost("CreateNote")]
         public async Task<IActionResult> CreateNote(UserNote updateDto1)
         {
             try
             {
-                await userdl1.CreateNote(updateDto1.NoteId, updateDto1.Title, updateDto1.Description, updateDto1.reminder, updateDto1.isArchive, updateDto1.isPinned, updateDto1.isTrash, updateDto1.EmailId);
+                await notebl.CreateNote(updateDto1.NoteId, updateDto1.Title, updateDto1.Description, updateDto1.reminder, updateDto1.isArchive, updateDto1.isPinned, updateDto1.isTrash, updateDto1.EmailId);
                 return Ok(updateDto1);
             }
             catch (Exception ex)
             {
-                // Log the exception
-                //return StatusCode(500, "An error occurred while inserting values");
+                
                 return BadRequest(ex.Message);
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
 
         //Display user note details details based on id
-        [HttpGet("getById/{id}")]
+        [HttpGet("GetNotesById")]
         public async Task<IActionResult> GetAllNotes(string id)
         {
             try
             {
-                var values = await userdl1.GetAllNotes(id);
+                var values = await notebl.GetAllNotes(id);
                 return Ok(values);
             }
             catch (Exception ex)
@@ -52,12 +51,12 @@ namespace FundooNotes.Controllers
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
-        [HttpPut("updateNote")]
+        [HttpPut("UpdateNoteByIdAndEmail")]
         public async Task<IActionResult> Update(string id,string emailid, [FromBody] UserNote updateDto1)
         {
             try
             {
-                return Ok(await userdl1.Update(id,emailid, updateDto1.Title,updateDto1.Description));
+                return Ok(await notebl.Update(id,emailid, updateDto1.Title,updateDto1.Description));
                 //return Ok("User password updated successfully");
             }
             catch (Exception ex)
@@ -68,13 +67,13 @@ namespace FundooNotes.Controllers
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
        
-        [HttpDelete("delete userNote/{id}/{email}")]
+        [HttpDelete("DeleteNoteByIdAndEmail")]
         public async Task<IActionResult> DeleteNote(string id,string email)
         {
             try
             {
                 //await userdl.DeleteUserByEmail(email);
-                return Ok(await userdl1.DeleteNote(id,email));
+                return Ok(await notebl.DeleteNote(id,email));
 
             }
             catch (Exception ex)
@@ -84,20 +83,5 @@ namespace FundooNotes.Controllers
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
-
-        [HttpPut("MoveToTrash")]
-        public async Task<IActionResult> MoveToTrash(string id, string emailid)
-        {
-            try
-            {
-                return Ok(await userdl1.MoveToTrash(id, emailid));
-                
-            }
-            catch (Exception ex)
-            {
-                
-                return BadRequest(ex.Message);
-            }
-        }
     }
 }

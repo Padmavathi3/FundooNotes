@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.InterfaceBl;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 
 namespace FundooNotes.Controllers
 {
@@ -9,22 +9,22 @@ namespace FundooNotes.Controllers
     [ApiController]
     public class UserCollaboratorController : ControllerBase
     {
-        private readonly IUserCollaboratorBl userdl2;
+        private readonly IUserCollaboratorBl collaboratorbl;
         private readonly IConfiguration configuration;
-        public UserCollaboratorController(IUserCollaboratorBl userdl2, IConfiguration configuration)
+        public UserCollaboratorController(IUserCollaboratorBl collaboratorbl, IConfiguration configuration)
         {
-            this.userdl2 = userdl2;
+            this.collaboratorbl = collaboratorbl;
             this.configuration = configuration;
         }
 
         //----------------------------------------------------------------------------------------------
 
-        [HttpPost("Create collaborator")]
+        [HttpPost("AddCollaborator")]
         public async Task<IActionResult> AddCollaborator(UserCollaborator updateDto2)
         {
             try
             {
-                await userdl2.AddCollaborator(updateDto2.CollaboratorId, updateDto2.NoteId, updateDto2.CollaboratorEmail);
+                await collaboratorbl.AddCollaborator(updateDto2.CollaboratorId, updateDto2.NoteId, updateDto2.CollaboratorEmail);
                 return Ok(updateDto2);
             }
             catch (Exception ex)
@@ -35,12 +35,12 @@ namespace FundooNotes.Controllers
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
-        [HttpGet("Display user collaborators  Details")]
+        [HttpGet("GetAllCollaborators")]
         public async Task<IActionResult> GetAllCollaborators()
         {
             try
             {
-                var values = await userdl2.GetAllCollaborators();
+                var values = await collaboratorbl.GetAllCollaborators();
                 return Ok(values);
             }
             catch (Exception ex)
@@ -51,13 +51,13 @@ namespace FundooNotes.Controllers
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpDelete("delete collaborator")]
+        [HttpDelete("DeleteCollaboratorById")]
         public async Task<IActionResult> DeleteCollaborator(string cid,string nid)
         {
             try
             {
                 //await userdl.DeleteUserByEmail(email);
-                return Ok(await userdl2.DeleteCollaborator(cid,nid));
+                return Ok(await collaboratorbl.DeleteCollaborator(cid,nid));
 
             }
             catch (Exception ex)

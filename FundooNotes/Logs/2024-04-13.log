@@ -1,0 +1,55 @@
+2024-04-13 14:45:28.9215|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 14:45:29.6595|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-13 14:45:29.6595|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-13 14:45:29.7687|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-13 14:45:29.7687|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-13 14:45:29.7687|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-13 14:45:30.3896|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-13 14:45:32.4226|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-13 14:45:32.4226|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 2031.1647ms
+2024-04-13 14:45:32.4226|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-13 14:45:32.4332|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 9.9602ms
+2024-04-13 14:45:32.5490|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 124.1785ms
+2024-04-13 14:45:32.7675|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-13 14:45:32.9993|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 231.7395ms
+2024-04-13 14:45:36.4669|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=haseena%40gmail.com&password=Haseena%40123 - - -
+2024-04-13 14:45:36.4833|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-13 14:45:36.4833|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-13 14:45:36.5768|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-13 14:45:39.1446|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-13 14:45:39.1651|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 2575.8451ms
+2024-04-13 14:45:39.1651|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-13 14:45:39.1686|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=haseena%40gmail.com&password=Haseena%40123 - 200 - application/json;+charset=utf-8 2701.2574ms
+2024-04-13 14:46:07.2839|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=haseena%40gmail.com&password=Haseena%40123 - - -
+2024-04-13 14:46:07.2839|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-13 14:46:07.2839|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-13 14:46:07.2839|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-13 14:46:07.3456|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-13 14:46:07.3456|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 58.2553ms
+2024-04-13 14:46:07.3456|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-13 14:46:07.3456|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=haseena%40gmail.com&password=Haseena%40123 - 200 - application/json;+charset=utf-8 66.0694ms
+2024-04-13 14:47:00.6762|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 OPTIONS https://localhost:7186/api/User/SignUp - - -
+2024-04-13 14:47:00.6762|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-13 14:47:00.6762|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 OPTIONS https://localhost:7186/api/User/SignUp - 204 - - 2.2603ms
+2024-04-13 14:47:00.6825|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7186/api/User/SignUp - application/json 89
+2024-04-13 14:47:00.6825|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-13 14:47:00.6825|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-13 14:47:00.6978|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Insert", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Insert(ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-13 14:47:00.7748|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-13 14:47:00.7779|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Insert (FundooNotes) in 79.7458ms
+2024-04-13 14:47:00.7779|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-13 14:47:00.7779|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7186/api/User/SignUp - 200 - application/json;+charset=utf-8 95.7027ms
+2024-04-13 14:55:47.5711|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=haseena%40gmail.com&password=Haseena%40123 - - -
+2024-04-13 14:55:47.5711|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-13 14:55:47.5711|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-13 14:55:47.5726|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-13 14:55:47.7181|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-13 14:55:47.7181|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 145.6383ms
+2024-04-13 14:55:47.7181|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-13 14:55:47.7181|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=haseena%40gmail.com&password=Haseena%40123 - 200 - application/json;+charset=utf-8 147.7906ms
+2024-04-13 15:20:56.3073|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-13 15:20:56.3073|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-13 15:20:56.3191|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 13.0893ms
+2024-04-13 15:20:56.3613|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 55.4783ms
+2024-04-13 15:20:56.6052|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-13 15:20:56.6999|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 94.7146ms

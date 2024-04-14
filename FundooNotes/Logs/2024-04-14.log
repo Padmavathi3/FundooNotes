@@ -1,0 +1,511 @@
+2024-04-14 18:26:47.0821|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 18:26:47.6750|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 18:26:47.6750|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 18:26:47.7870|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 18:26:47.7870|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 18:26:47.7870|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 18:26:48.7319|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 18:26:50.5897|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 18:26:50.5897|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 18:26:50.6026|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 9.4666ms
+2024-04-14 18:26:50.6026|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 1867.2472ms
+2024-04-14 18:26:50.7302|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 140.4503ms
+2024-04-14 18:26:50.8779|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 18:26:51.1201|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 241.9928ms
+2024-04-14 18:26:58.7979|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:26:58.8196|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:26:58.8276|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:26:58.8276|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 30.1386ms
+2024-04-14 18:28:07.1979|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=padmavathichilamala%40gmail.com&password=Padma%40123 - - -
+2024-04-14 18:28:07.1979|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 18:28:07.2860|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:28:09.8147|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing NotFoundObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 18:28:09.8330|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 2534.1557ms
+2024-04-14 18:28:09.8330|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 18:28:09.8330|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=padmavathichilamala%40gmail.com&password=Padma%40123 - 404 - application/json;+charset=utf-8 2638.4084ms
+2024-04-14 18:28:27.3262|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 18:28:27.4253|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 18:28:27.4253|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 18:28:27.4615|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 18:28:27.4621|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 18:28:27.4621|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 18:28:27.5724|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 18:28:27.7431|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 168.9754ms
+2024-04-14 18:28:27.7431|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 18:28:27.7431|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 18:28:27.7596|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 3.1788ms
+2024-04-14 18:28:27.7822|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 25.7939ms
+2024-04-14 18:28:28.0737|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 18:28:28.2099|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 136.1791ms
+2024-04-14 18:28:33.4068|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:28:33.4182|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:28:33.4182|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:28:33.4182|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 13.9124ms
+2024-04-14 18:29:02.3958|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 18:29:02.4902|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 18:29:02.4902|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 18:29:02.5235|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 18:29:02.5243|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 18:29:02.5243|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 18:29:04.2034|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 18:29:04.5219|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 318.5403ms
+2024-04-14 18:29:04.6128|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 18:29:04.6128|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 18:29:04.6193|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 6.3267ms
+2024-04-14 18:29:04.6514|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 38.5577ms
+2024-04-14 18:29:04.7970|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 18:29:04.9804|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 183.2244ms
+2024-04-14 18:29:15.0631|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:29:15.0748|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:29:15.0748|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:29:15.0748|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 13.7998ms
+2024-04-14 18:30:14.7162|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 18:30:14.8115|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 18:30:14.8115|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 18:30:14.8455|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 18:30:14.8455|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 18:30:14.8455|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 18:30:15.4357|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 18:30:15.6087|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 172.7002ms
+2024-04-14 18:30:15.6250|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 18:30:15.6250|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 18:30:15.6250|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 4.0504ms
+2024-04-14 18:30:15.6531|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 28.0368ms
+2024-04-14 18:30:15.7857|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 18:30:15.8886|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 102.8315ms
+2024-04-14 18:30:27.3326|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:30:27.3518|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:30:27.3571|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:30:27.3571|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 25.6187ms
+2024-04-14 18:31:04.7266|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7186/api/User/SignUp - application/json 120
+2024-04-14 18:31:04.7380|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 18:31:04.7437|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 18:31:04.7989|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Insert", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Insert(ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:31:05.4481|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 18:31:05.4699|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Insert (FundooNotes) in 657.4206ms
+2024-04-14 18:31:05.4699|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 18:31:05.4699|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7186/api/User/SignUp - 200 - application/json;+charset=utf-8 745.4443ms
+2024-04-14 18:31:12.4183|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:31:12.4183|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:31:12.4183|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:31:12.4183|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 4.4515ms
+2024-04-14 18:31:35.2617|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=padmavathichilamala%40gmail.com&password=string - - -
+2024-04-14 18:31:35.2617|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 18:31:35.2617|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:31:35.4910|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 18:31:35.4910|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 221.1626ms
+2024-04-14 18:31:35.4931|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 18:31:35.4931|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=padmavathichilamala%40gmail.com&password=string - 200 - application/json;+charset=utf-8 231.6623ms
+2024-04-14 18:31:56.8131|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:31:56.8984|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersList (FundooNotes)'
+2024-04-14 18:31:56.9054|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersList", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersList() on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:31:56.9054|INFO|RepositoryLayer.Service.UserService|details of users
+2024-04-14 18:31:56.9197|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 18:31:56.9197|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersList (FundooNotes) in 15.9056ms
+2024-04-14 18:31:56.9197|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersList (FundooNotes)'
+2024-04-14 18:31:56.9197|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 200 - application/json;+charset=utf-8 108.7492ms
+2024-04-14 18:32:33.2390|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 PUT https://localhost:7186/api/User/ResetPassWordByEmail?personEmailUpdate=padmavathichilamala%40gmail.com - application/json 98
+2024-04-14 18:32:33.2390|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 18:32:33.2390|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.ResetPasswordByEmail (FundooNotes)'
+2024-04-14 18:32:33.2537|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "ResetPasswordByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPasswordByEmail(System.String, ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:32:33.2861|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-14 18:32:33.2861|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.ResetPasswordByEmail (FundooNotes) in 33.9568ms
+2024-04-14 18:32:33.2861|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.ResetPasswordByEmail (FundooNotes)'
+2024-04-14 18:32:33.2861|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 PUT https://localhost:7186/api/User/ResetPassWordByEmail?personEmailUpdate=padmavathichilamala%40gmail.com - 200 - text/plain;+charset=utf-8 49.8056ms
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 PUT https://localhost:7186/api/User/ResetPassWordByEmail?personEmailUpdate=padmavathichilamala%40gmail.com - application/json 101
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.ResetPasswordByEmail (FundooNotes)'
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "ResetPasswordByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPasswordByEmail(System.String, ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.ResetPasswordByEmail (FundooNotes) in 4.8255ms
+2024-04-14 18:32:55.8139|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.ResetPasswordByEmail (FundooNotes)'
+2024-04-14 18:32:55.8204|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 PUT https://localhost:7186/api/User/ResetPassWordByEmail?personEmailUpdate=padmavathichilamala%40gmail.com - 200 - text/plain;+charset=utf-8 6.4948ms
+2024-04-14 18:34:11.3818|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=padmavathichilamala%40gmail.com - - -
+2024-04-14 18:34:11.3818|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:34:11.3908|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:34:21.8996|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-14 18:34:21.8996|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 10508.9065ms
+2024-04-14 18:34:21.8996|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:34:21.8996|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=padmavathichilamala%40gmail.com - 400 - text/plain;+charset=utf-8 10518.4530ms
+2024-04-14 18:34:36.6525|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=padmavathichilamala%40gmail.com - - -
+2024-04-14 18:34:36.6525|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:34:36.6525|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:34:41.8829|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-14 18:34:41.8829|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 5229.0637ms
+2024-04-14 18:34:41.8833|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:34:41.8833|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=padmavathichilamala%40gmail.com - 400 - text/plain;+charset=utf-8 5231.1158ms
+2024-04-14 18:35:07.2322|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:35:07.2322|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:35:07.2322|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:35:12.8760|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-14 18:35:12.8760|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 5642.8846ms
+2024-04-14 18:35:12.8760|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:35:12.8760|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 400 - text/plain;+charset=utf-8 5644.3364ms
+2024-04-14 18:36:11.2155|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 18:36:11.3034|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 18:36:11.3034|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 18:36:11.3464|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 18:36:11.3464|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 18:36:11.3464|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 18:36:12.4863|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 18:36:12.8020|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 316.8077ms
+2024-04-14 18:36:12.8947|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 18:36:12.8947|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 18:36:12.8993|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 4.5106ms
+2024-04-14 18:36:12.9247|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 29.8052ms
+2024-04-14 18:36:13.0156|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 18:36:13.1396|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 123.4891ms
+2024-04-14 18:36:18.3503|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 18:36:18.3661|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:36:18.3680|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:36:18.3680|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 17.9186ms
+2024-04-14 18:36:43.5936|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=gaayathri%40gmail.com&password=Gaayathri%40123 - - -
+2024-04-14 18:36:43.6026|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 18:36:43.6574|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:36:44.4799|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 18:36:44.5021|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 830.2042ms
+2024-04-14 18:36:44.5021|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 18:36:44.5021|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=gaayathri%40gmail.com&password=Gaayathri%40123 - 200 - application/json;+charset=utf-8 910.9134ms
+2024-04-14 18:37:20.9031|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:37:20.9813|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:37:20.9813|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:37:31.2328|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-14 18:37:31.2328|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 10243.6473ms
+2024-04-14 18:37:31.2328|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:37:31.2328|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 400 - text/plain;+charset=utf-8 10331.5708ms
+2024-04-14 18:38:59.4786|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:38:59.4786|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:38:59.4786|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:38:59.5413|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 18:38:59.5413|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 62.0866ms
+2024-04-14 18:38:59.5413|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:38:59.5413|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 200 - application/json;+charset=utf-8 64.6032ms
+2024-04-14 18:45:30.4841|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:45:30.4841|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:45:30.4841|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:45:30.5001|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 18:45:30.5001|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 13.357ms
+2024-04-14 18:45:30.5001|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:45:30.5001|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 200 - application/json;+charset=utf-8 18.0051ms
+2024-04-14 18:45:31.5540|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:45:31.5550|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:45:31.5550|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:45:31.5550|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 18:45:31.5550|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 1.9741ms
+2024-04-14 18:45:31.5550|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:45:31.5550|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 200 - application/json;+charset=utf-8 3.6976ms
+2024-04-14 18:45:37.1820|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 18:45:37.3046|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 18:45:37.3052|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 18:45:37.3583|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 18:45:37.3583|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 18:45:37.3583|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 18:45:38.0098|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 18:45:38.1826|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 170.3320ms
+2024-04-14 18:45:38.1826|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 18:45:38.1826|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 18:45:38.1994|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 8.0547ms
+2024-04-14 18:45:38.2257|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 34.4246ms
+2024-04-14 18:45:38.7765|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 18:45:38.9078|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 131.2949ms
+2024-04-14 18:45:56.9168|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:45:56.9421|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 18:45:56.9522|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 18:45:56.9522|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 401 0 - 35.8044ms
+2024-04-14 18:46:07.3286|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - - -
+2024-04-14 18:46:07.4418|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:46:07.4928|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 18:46:07.8043|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 18:46:07.8206|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 315.8081ms
+2024-04-14 18:46:07.8206|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 18:46:07.8206|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=gaayathri%40gmail.com - 200 - application/json;+charset=utf-8 494.1685ms
+2024-04-14 21:12:55.3605|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:12:55.4709|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:12:55.4709|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:12:55.5165|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:12:55.5165|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:12:55.5165|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:12:56.1948|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:12:57.4856|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 1289.9849ms
+2024-04-14 21:12:57.4856|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:12:57.4856|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:12:57.4965|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 5.0239ms
+2024-04-14 21:12:57.5683|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 76.8464ms
+2024-04-14 21:12:58.0124|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:12:58.1499|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 137.4555ms
+2024-04-14 21:13:06.0736|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 21:13:06.0907|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 21:13:06.0907|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 21:13:06.0907|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 25.2252ms
+2024-04-14 21:15:23.2359|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:15:23.3319|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:15:23.3319|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:15:23.3651|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:15:23.3651|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:15:23.3651|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:15:23.9333|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:15:24.1041|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 169.0941ms
+2024-04-14 21:15:24.1041|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:15:24.1041|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:15:24.1041|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 3.7321ms
+2024-04-14 21:15:24.1424|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 30.0566ms
+2024-04-14 21:15:24.2687|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:15:24.3564|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 87.5365ms
+2024-04-14 21:15:46.0614|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 21:15:46.0813|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 21:15:46.0869|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 21:15:46.0869|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 25.8261ms
+2024-04-14 21:22:00.7553|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:22:00.8535|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:22:00.8535|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:22:00.8869|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:22:00.8869|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:22:00.8869|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:22:01.1986|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:22:01.3533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 152.2430ms
+2024-04-14 21:22:01.3533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:22:01.3533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:22:01.3728|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 6.4808ms
+2024-04-14 21:22:01.4066|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 40.9535ms
+2024-04-14 21:22:01.8963|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:22:02.0610|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 164.5813ms
+2024-04-14 21:22:14.6332|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7186/api/User/SignUp - application/json 92
+2024-04-14 21:22:14.6506|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 21:22:14.6506|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:22:14.7165|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Insert", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Insert(ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:22:16.4118|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 21:22:16.4319|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Insert (FundooNotes) in 1702.3629ms
+2024-04-14 21:22:16.4319|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:22:16.4319|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7186/api/User/SignUp - 200 - application/json;+charset=utf-8 1800.8708ms
+2024-04-14 21:23:49.3433|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:23:49.4869|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:23:49.4869|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:23:49.5243|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:23:49.5243|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:23:49.5243|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:23:50.0449|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:23:50.2452|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 199.0970ms
+2024-04-14 21:23:50.2633|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:23:50.2633|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:23:50.2633|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 4.4167ms
+2024-04-14 21:23:50.2930|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 29.7206ms
+2024-04-14 21:23:50.4463|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:23:50.5946|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 148.3121ms
+2024-04-14 21:24:34.9918|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:24:35.2930|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:24:35.2930|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:24:35.3874|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:24:35.3874|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:24:35.3874|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:24:36.1856|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:24:37.2691|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:24:37.2793|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 1101.9098ms
+2024-04-14 21:24:37.2793|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:24:37.2793|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 22.8381ms
+2024-04-14 21:24:38.0789|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 796.0973ms
+2024-04-14 21:24:38.2185|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:24:38.5937|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 378.6538ms
+2024-04-14 21:24:44.4233|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7186/api/User/SignUp - application/json 98
+2024-04-14 21:24:44.4431|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 21:24:44.4481|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:24:44.5173|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Insert", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Insert(ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:24:45.9751|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 21:24:45.9965|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Insert (FundooNotes) in 1468.7072ms
+2024-04-14 21:24:45.9965|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:24:45.9965|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7186/api/User/SignUp - 400 - application/json;+charset=utf-8 1575.4379ms
+2024-04-14 21:25:53.4313|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7186/api/User/SignUp - application/json 111
+2024-04-14 21:25:53.4313|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 21:25:53.4313|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:25:53.4313|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Insert", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Insert(ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:25:53.5548|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 21:25:53.5548|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Insert (FundooNotes) in 116.1285ms
+2024-04-14 21:25:53.5555|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:25:53.5555|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7186/api/User/SignUp - 400 - application/json;+charset=utf-8 126.5314ms
+2024-04-14 21:26:06.6232|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7186/api/User/SignUp - application/json 113
+2024-04-14 21:26:06.6366|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful.
+2024-04-14 21:26:06.6366|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:26:06.6366|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Insert", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Insert(ModelLayer.Entities.User) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:26:06.6640|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 21:26:06.6663|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Insert (FundooNotes) in 29.2043ms
+2024-04-14 21:26:06.6663|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Insert (FundooNotes)'
+2024-04-14 21:26:06.6663|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7186/api/User/SignUp - 200 - application/json;+charset=utf-8 44.6555ms
+2024-04-14 21:36:33.9775|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:36:34.0800|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:36:34.0800|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:36:34.1298|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:36:34.1298|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:36:34.1298|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:36:34.3735|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:36:34.5299|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 153.7416ms
+2024-04-14 21:36:34.5299|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:36:34.5299|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:36:34.5408|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 3.5424ms
+2024-04-14 21:36:34.5694|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 32.2309ms
+2024-04-14 21:36:34.7451|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:36:34.8628|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 117.7012ms
+2024-04-14 21:36:39.0971|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 21:36:39.1101|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 21:36:39.1101|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 21:36:39.1101|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 18.2463ms
+2024-04-14 21:37:29.9963|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=seethaji%40gmail.com&password=Seetha%40123 - - -
+2024-04-14 21:37:29.9963|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 21:37:30.0284|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:37:30.6509|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 21:37:30.6509|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 626.621ms
+2024-04-14 21:37:30.6509|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 21:37:30.6647|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=seethaji%40gmail.com&password=Seetha%40123 - 200 - application/json;+charset=utf-8 668.4227ms
+2024-04-14 21:37:49.9070|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 21:37:49.9550|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersList (FundooNotes)'
+2024-04-14 21:37:49.9550|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersList", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersList() on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:37:49.9550|INFO|RepositoryLayer.Service.UserService|details of users
+2024-04-14 21:37:49.9692|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 21:37:49.9692|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersList (FundooNotes) in 12.2126ms
+2024-04-14 21:37:49.9692|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersList (FundooNotes)'
+2024-04-14 21:37:49.9692|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 200 - application/json;+charset=utf-8 63.9563ms
+2024-04-14 21:40:49.8971|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 21:40:50.1461|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 21:40:50.1461|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 21:40:50.2340|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 21:40:50.2340|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 21:40:50.2340|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 21:40:50.6359|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 21:40:50.9617|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 328.8317ms
+2024-04-14 21:40:50.9617|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 21:40:50.9617|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 21:40:50.9617|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 9.1258ms
+2024-04-14 21:40:51.0235|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 55.4517ms
+2024-04-14 21:40:51.0987|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 21:40:51.2380|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 139.5751ms
+2024-04-14 21:40:55.4801|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 21:40:55.5070|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 21:40:55.5139|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 21:40:55.5139|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 401 0 - 35.3574ms
+2024-04-14 21:41:21.3161|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=seethaji%40gmail.com&password=Seetha%40123 - - -
+2024-04-14 21:41:21.3411|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 21:41:21.4191|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:41:22.7421|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 21:41:22.7670|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 1331.9643ms
+2024-04-14 21:41:22.7670|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 21:41:22.7670|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=seethaji%40gmail.com&password=Seetha%40123 - 200 - application/json;+charset=utf-8 1455.4489ms
+2024-04-14 21:41:41.4840|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/GetUsersList - - -
+2024-04-14 21:41:41.5829|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersList (FundooNotes)'
+2024-04-14 21:41:41.5917|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersList", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersList() on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 21:41:41.5917|INFO|RepositoryLayer.Service.UserService|details of users
+2024-04-14 21:41:41.6178|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 21:41:41.6225|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersList (FundooNotes) in 30.5224ms
+2024-04-14 21:41:41.6225|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersList (FundooNotes)'
+2024-04-14 21:41:41.6225|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/GetUsersList - 200 - application/json;+charset=utf-8 139.5880ms
+2024-04-14 22:05:18.7436|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 22:05:19.0095|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 22:05:19.0095|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 22:05:19.0541|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 22:05:19.0541|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 22:05:19.0551|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 22:05:19.8027|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 22:05:20.1487|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 357.2600ms
+2024-04-14 22:05:20.1487|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 22:05:20.1487|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 22:05:20.1487|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 8.2339ms
+2024-04-14 22:05:20.2203|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 63.6587ms
+2024-04-14 22:05:20.2924|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 22:05:20.4227|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 130.5499ms
+2024-04-14 22:05:42.8929|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=seetha%40gmail.com&password=Seetha%40123 - - -
+2024-04-14 22:05:42.9120|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 22:05:42.9967|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 22:05:44.0868|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 22:05:44.0868|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 1096.3326ms
+2024-04-14 22:05:44.1035|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 22:05:44.1035|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=seetha%40gmail.com&password=Seetha%40123 - 200 - application/json;+charset=utf-8 1212.1037ms
+2024-04-14 22:06:18.5402|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - - -
+2024-04-14 22:06:18.5844|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Failed to validate the token.|Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(String inputString, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(String rawString, Int32 startIndex, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2024-04-14 22:06:18.8392|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2024-04-14 22:06:18.8392|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 22:06:18.8607|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 22:06:18.8607|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - 401 0 - 323.1119ms
+2024-04-14 22:06:46.1057|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - - -
+2024-04-14 22:06:46.1057|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Failed to validate the token.|Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(String inputString, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(String rawString, Int32 startIndex, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2024-04-14 22:06:46.1057|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2024-04-14 22:06:46.1057|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-14 22:06:46.1057|INFO|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was challenged.
+2024-04-14 22:06:46.1057|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - 401 0 - 6.7210ms
+2024-04-14 22:07:12.8831|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - - -
+2024-04-14 22:07:12.9849|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 22:07:12.9955|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 22:07:23.5968|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-14 22:07:23.5968|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 10602.1408ms
+2024-04-14 22:07:23.5968|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 22:07:23.5968|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - 400 - text/plain;+charset=utf-8 10718.3476ms
+2024-04-14 22:07:45.0356|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - - -
+2024-04-14 22:07:45.0356|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 22:07:45.0356|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 22:07:45.1273|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 22:07:45.1273|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 89.1442ms
+2024-04-14 22:07:45.1273|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 22:07:45.1273|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - 200 - application/json;+charset=utf-8 95.5546ms
+2024-04-14 22:10:48.3816|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\padma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 22:10:48.7336|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7186
+2024-04-14 22:10:48.7336|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5138
+2024-04-14 22:10:48.7947|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-04-14 22:10:48.7947|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-04-14 22:10:48.7947|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\C#Projects\FundooNotes\FundooNotes
+2024-04-14 22:10:49.6391|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - - -
+2024-04-14 22:10:49.9668|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 - text/html;charset=utf-8 336.2707ms
+2024-04-14 22:10:49.9668|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - - -
+2024-04-14 22:10:49.9668|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - - -
+2024-04-14 22:10:49.9823|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 8.1601ms
+2024-04-14 22:10:50.0342|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 60.0115ms
+2024-04-14 22:10:50.1006|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - - -
+2024-04-14 22:10:50.2254|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 124.9274ms
+2024-04-14 22:11:35.8616|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/Login?email=seetha%40gmail.com&password=Seetha%40123 - - -
+2024-04-14 22:11:35.8919|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 22:11:35.9634|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 22:11:37.1742|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.ResponseModel`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-14 22:11:37.1946|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.Login (FundooNotes) in 1215.495ms
+2024-04-14 22:11:37.1958|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.Login (FundooNotes)'
+2024-04-14 22:11:37.1958|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/Login?email=seetha%40gmail.com&password=Seetha%40123 - 200 - application/json;+charset=utf-8 1336.4586ms
+2024-04-14 22:12:01.6726|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - - -
+2024-04-14 22:12:01.8068|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 22:12:01.8068|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsersByEmail", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByEmail(System.String) on controller FundooNotes.Controllers.UserController (FundooNotes).
+2024-04-14 22:12:02.3429|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelLayer.Entities.User, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-14 22:12:02.3429|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes) in 531.4447ms
+2024-04-14 22:12:02.3429|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'FundooNotes.Controllers.UserController.GetUsersByEmail (FundooNotes)'
+2024-04-14 22:12:02.3429|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7186/api/User/getByEmailUsingRedis?email=seetha%40gmail.com - 200 - application/json;+charset=utf-8 675.3804ms

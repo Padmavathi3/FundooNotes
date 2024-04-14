@@ -1,156 +1,308 @@
-﻿using BusinessLayer.InterfaceBl;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
+using BusinessLayer.InterfaceBl;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using RepositoryLayer.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text.Json;
+using RepositoryLayer.Service;
+using Confluent.Kafka;
+using Newtonsoft.Json;
+using ModelLayer.Entities;
+using Microsoft.AspNetCore.Cors;
+using ModelLayer;
+using NuGet.Common;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using Newtonsoft.Json.Linq;
+using RepositoryLayer.CustomExceptions;
+using RepositoryLayer.Interface;
 
 namespace FundooNotes.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class UserController : ControllerBase
     {
         private readonly IUserBl userdl;
         private readonly IConfiguration configuration;
-        public UserController(IUserBl userdl, IConfiguration configuration)
+        private readonly IDistributedCache _cache;
+        public readonly ILogger<UserService> logger;
+        private readonly ProducerConfig _config;
+       
+        public UserController(IUserBl userdl, IConfiguration configuration, IDistributedCache _cache, ILogger<UserService> logger, ProducerConfig config)
         {
             this.userdl = userdl;
             this.configuration = configuration;
+            this._cache = _cache;
+            this.logger = logger;
+            _config = config;
+           
         }
 
-        //----------------------------------------------------------------------------------------------
-        [HttpPost("Sign Up")]
-        public async Task<IActionResult> Insert(User updateDto)
+        //---------------------------------------------------------------------------------------------------------
+
+        [HttpPost("SignUp")]
+        public async Task<IActionResult> SignUp([FromBody] User updateDto)
         {
             try
             {
-                await userdl.Insertion(updateDto.FirstName, updateDto.LastName, updateDto.EmailId, updateDto.Password);
-                return Ok(updateDto);
+                // Inserting user details into the database
+                int rowsAffected = await userdl.Insertion(updateDto.FirstName, updateDto.LastName, updateDto.EmailId, updateDto.Password);
+
+                if (rowsAffected > 0)
+                {
+                    return Ok(new ResponseModel<object>
+                    {
+                        Success = true,
+                        Message = "User registered successfully",
+                        Data = updateDto
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<object>
+                    {
+                        Success = false,
+                        Message = "Failed to register user",
+                        Data = null
+                    });
+                }
             }
             catch (Exception ex)
             {
-                // Log the exception
-                //return StatusCode(500, "An error occurred while inserting values");
-                return BadRequest(ex.Message);
+                return BadRequest(new ResponseModel<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Data = null
+                });
             }
         }
-        //--------------------------------------------------------------------------------
-
-        [HttpGet("Display user Details")]
+        //---------------------------------------------------------------------------------------------------------------------------------------------
+        [HttpGet("GetUsersList")]
         public async Task<IActionResult> GetUsersList()
         {
             try
             {
-                var values = await userdl.GetUsers();
-                return Ok(values);
-            }
-            catch (Exception ex)
-            {
-                //log error
-                return StatusCode(500, ex.Message);
-            }
-        }
-        //---------------------------------------------------------------------------------------------
+                logger.LogInformation("Fetching details of users");
+                var users = await userdl.GetUsers();
 
-        [HttpPut("ResetPassWord/{personEmailUpdate}")]
-        public async Task<IActionResult> ResetPasswordByEmail(string personEmailUpdate, [FromBody] User updateDto)
-        {
-            try
-            {
-                return Ok(await userdl.ResetPasswordByEmail(personEmailUpdate, updateDto.Password));
-                //return Ok("User password updated successfully");
+                return Ok(new ResponseModel<IEnumerable<User>>
+                {
+                    Success = true,
+                    Message = "User Details",
+                    Data = users
+                });
             }
             catch (Exception ex)
             {
-                // Log the exception
-                return BadRequest(ex.Message);
+                return BadRequest(new ResponseModel<object>
+                {
+                    Success = false,
+                    Message = "User must be authorized",
+                    Data = null
+                });
             }
         }
+
         //-------------------------------------------------------------------------------------------------------------------------------------
-
-        //Display user details based on email
-        [HttpGet("getByEmail")]
+        
+        [HttpGet("getByEmailUsingRedis")]
+        [Authorize]
         public async Task<IActionResult> GetUsersByEmail(string email)
         {
             try
             {
-                var values = await userdl.GetUsersByEmail(email);
-                return Ok(values);
+                var cachedLabel = await _cache.GetStringAsync(email);  
+                if (!string.IsNullOrEmpty(cachedLabel))
+                {
+
+                    var result=System.Text.Json.JsonSerializer.Deserialize<List<User>>(cachedLabel);
+                    return Ok(new ResponseModel<List<User>>
+                    {
+                        Success = true,
+                        Message = "Users Detials from cache",
+                        Data = result
+                    });
+
+                }
+                else
+                {
+                    var values = await userdl.GetUsersByEmail(email);
+                    if (values != null)
+                    {
+                        //
+                        var cacheOptions = new DistributedCacheEntryOptions
+                        {
+                            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(20)
+
+                        };
+
+                        //add to the redis calche memory
+                        await _cache.SetStringAsync(email, System.Text.Json.JsonSerializer.Serialize(values), cacheOptions);
+                        return Ok(new ResponseModel<List<User>>
+                        {
+                            Success = true,
+                            Message = "User details retrieved.",
+                            Data = (List<User>)values
+                        });
+                    }
+                    return NotFound("No email found");
+                }
             }
             catch (Exception ex)
             {
-                //log error
-                return BadRequest(ex.Message);  
+
+                return BadRequest(new ResponseModel<object>
+                {
+
+                    Success = false,
+                    Message = ex.Message,
+                    Data = null
+                });
             }
         }
+
         //-----------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpDelete("delete user/{email}")]
+        [HttpDelete("DeleteUserByEmail")]
         public async Task<IActionResult> DeleteUserByEmail(string email)
         {
             try
             {
-                //await userdl.DeleteUserByEmail(email);
-                return Ok(await userdl.DeleteUserByEmail(email));
-                
+                await userdl.DeleteUserByEmail(email);
+                return Ok(new ResponseModel<object>
+                {
+                    Success = true,
+                    Message = "Users deleted successfully",
+                    Data = null
+                });
+
+
             }
             catch (Exception ex)
             {
-                // Log error
-                return BadRequest(ex.Message);
+
+                return BadRequest(new ResponseModel<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Data = null
+                });
             }
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------
-        [HttpGet("Login/{email}/{password}")]
-        //[UserExceptionHandlerFilter]
+
+        [HttpGet("Login")]
+       
         public async Task<IActionResult> Login(string email, string password)
         {
+            try
+            {
+                var values = await userdl.Login(email, password);
 
-            var values = await userdl.Login(email, password);
-
-            String token = TokenGeneration(email);
-            return Ok(token);
-
+                string token = TokenGeneration(email);
+                return Ok(new ResponseModel<string>
+                {
+                    Success = true,
+                    Message = "login successfully",
+                    Data = token
+                });
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(new ResponseModel<object>
+                {
+                    Success = false,
+                    Message = "login not donesuccessfully"
+                });
+            }
 
         }
+
+
+
+
         //----------------------------------------------------------------------------------------
 
         private string TokenGeneration(string email)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["jwt:key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]));
             var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var claim = new[]
+            var expires = DateTime.UtcNow.AddHours(1);
+            var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email,email),
-                //here we can add additional clims like permissiones
+                 new Claim(ClaimTypes.Email, email),
+                 // Add additional claims if needed
             };
-            var token = new JwtSecurityToken(issuer: configuration["jwt:issuer"],
-                                                audience: configuration["jwt:audience"],
-                                                claims: claim,
-                                                expires: DateTime.UtcNow.AddMinutes(double.Parse(configuration["jwt:minutes"])),
-                                                signingCredentials: cred);
+            var token = new JwtSecurityToken(
+                issuer: configuration["Jwt:Issuer"],
+                audience: configuration["Jwt:Audience"],
+                claims: claims,
+                expires: expires,
+                signingCredentials: cred
+            );
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+
         //-----------------------------------------------------------------------------------------------------------
 
-        [HttpPut("forgot password/{Email}")]
-        //[UserExceptionHandlerFilter]
-        public async Task<IActionResult> ChangePasswordRequest(String Email)
+        [HttpPut("ForgotPassword")]
+       
+        public async Task<IActionResult> ChangePasswordRequest(string Email)
         {
-            return Ok(await userdl.ChangePasswordRequest(Email));
+            try
+            {
+                await userdl.ChangePasswordRequest(Email);
+                return Ok(new ResponseModel<string>
+                {
+                    Success = true,
+                    Message = "otp sent to mail successfully"
+                });
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(new ResponseModel<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Data = null
+                });
+            }
         }
 
 
 
-        [HttpPut("otp/{otp}/{password}")]
-        //[UserExceptionHandlerFilter]
-        public async Task<IActionResult> ChangePassword(String otp, String password)
+        [HttpPut("ChangePassword")]
+        
+        public async Task<IActionResult> ChangePassword(string otp, string password)
         {
-            return Ok(await userdl.ChangePassword(otp, password));
+            try
+            {
+                await userdl.ChangePassword(otp, password);
+                return Ok(new ResponseModel<string>
+                {
+                    Success = true,
+                    Message = "password changed successfully"
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResponseModel<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Data = null
+                });
+            }
         }
+        
     }
 
 }
