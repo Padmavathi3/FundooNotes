@@ -1,6 +1,6 @@
 ﻿using BusinessLayer.InterfaceBl;
 using Microsoft.Extensions.Configuration;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace BusinessLayer.ServiceBl
         }
 
         //Insertion
-        public Task Insertion(string firstname, string lastname, string emailid, string password)
+        public Task<int> Insertion(string firstname, string lastname, string emailid, string password)
         {
             return person.Insertion(firstname, lastname, emailid, password);
         }
@@ -32,12 +32,6 @@ namespace BusinessLayer.ServiceBl
             return person.GetUsers();
         }
 
-        //reset password
-        public Task<int> ResetPasswordByEmail(string emailid, string newPassword)
-        {
-            return person.ResetPasswordByEmail(emailid, newPassword);
-        }
-
         //get users by email
         public Task<IEnumerable<User>> GetUsersByEmail(string email)
         {
@@ -46,7 +40,7 @@ namespace BusinessLayer.ServiceBl
 
 
         //delete user
-        public Task<int> DeleteUserByEmail(string email)
+        public Task<string> DeleteUserByEmail(string email)
         {
             return person.DeleteUserByEmail(email);
         }

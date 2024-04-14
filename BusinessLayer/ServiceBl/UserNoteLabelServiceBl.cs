@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.InterfaceBl;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -11,31 +11,31 @@ namespace BusinessLayer.ServiceBl
 {
     public class UserNoteLabelServiceBl:IUserNoteLabelBl
     {
-        private readonly IUserNoteLabel person3;
+        private readonly IUserNoteLabel label;
 
         public UserNoteLabelServiceBl(IUserNoteLabel person3)
         {
-            this.person3 = person3;
+            this.label = person3;
         }
 
         public Task CreateLabel(string id, string name, string email)
         {
-            return person3.CreateLabel(id, name, email);
+            return label.CreateLabel(id, name, email);
         }
 
         public Task<IEnumerable<UserNoteLabel>> GetUserNoteLabels()
         {
-            return person3.GetUserNoteLabels();
+            return label.GetUserNoteLabels();
         }
 
-        public Task<int> UpdateName(string name, string id)
+        public Task<string> UpdateName(string name, string id)
         {
-            return person3.UpdateName(name, id);
+            return label.UpdateName(name, id);
         }
 
-        public Task<int> DeleteLabel(string name, string id)
+        public Task<string> DeleteLabel(string name, string id)
         {
-            return person3.DeleteLabel(name, id);
+            return label.DeleteLabel(name, id);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using RepositoryLayer.Entities;
+﻿using ModelLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace BusinessLayer.InterfaceBl
     public interface IUserBl
     {
         //Insertion
-        public Task Insertion(string firstname, string lastname, string emailid, string password);
+        public Task<int> Insertion(string firstname, string lastname, string emailid, string password);
 
         //Get
         public Task<IEnumerable<User>> GetUsers();
@@ -18,11 +18,8 @@ namespace BusinessLayer.InterfaceBl
         //dispay user values based on email
         public Task<IEnumerable<User>> GetUsersByEmail(string email);
 
-        //reset password
-        public Task<int> ResetPasswordByEmail(string emailid, string newPassword);
-
         //delete
-        public Task<int> DeleteUserByEmail(string email);
+        public Task<string> DeleteUserByEmail(string email);
 
         //login
         public Task<IEnumerable<User>> Login(string email, string password);

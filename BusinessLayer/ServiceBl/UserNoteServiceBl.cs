@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.InterfaceBl;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -13,36 +13,33 @@ namespace BusinessLayer.ServiceBl
 {
     public class UserNoteServiceBl:IUserNoteBl
     {
-        private readonly IUserNote person1;
+        private readonly IUserNote note;
 
         public UserNoteServiceBl(IUserNote person1)
         {
-            this.person1 = person1;
+            this.note = person1;
         }
 
         public Task CreateNote(string id, string title, string description, DateTime reminder, string archieve, string pinned, string trash, string email)
         {
-            return person1.CreateNote(id, title, description, reminder, archieve, pinned, trash, email);
+            return note.CreateNote(id, title, description, reminder, archieve, pinned, trash, email);
         }
 
         public Task<IEnumerable<UserNote>> GetAllNotes(string id)
         {
-            return person1.GetAllNotes(id);
+            return note.GetAllNotes(id);
         }
 
-        public Task<int> Update(string id, string emailid, string title, string description)
+        public Task<string> Update(string id, string emailid, string title, string description)
         {
-            return person1.Update(id,emailid, title, description);
+            return note.Update(id,emailid, title, description);
         }
 
-        public Task<int> DeleteNote(string id, string email)
+        public Task<string> DeleteNote(string id, string email)
         {
-            return person1.DeleteNote(id,email);
+            return note.DeleteNote(id,email);
         }
 
-        public Task<int> MoveToTrash(string id, string emailid)
-        {
-            return person1.MoveToTrash(id,emailid);
-        }
+       
     }
 }

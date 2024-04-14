@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.InterfaceBl;
-using RepositoryLayer.Entities;
+using ModelLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -11,29 +11,29 @@ namespace BusinessLayer.ServiceBl
 {
     public class UserCollaboratorServiceBl: IUserCollaboratorBl
     {
-        private readonly IUserCollaborator  person2;
+        private readonly IUserCollaborator  collaborator;
 
         public UserCollaboratorServiceBl(IUserCollaborator person2)
         {
-            this.person2 = person2;
+            this.collaborator = person2;
         }
 
         //Insertion
         public Task AddCollaborator(string cid, string nid, string email)
         {
-            return person2.AddCollaborator(cid, nid, email);
+            return collaborator.AddCollaborator(cid, nid, email);
         }
 
         //display all collaborators
         public Task<IEnumerable<UserCollaborator>> GetAllCollaborators()
         {
-            return person2.GetAllCollaborators();
+            return collaborator.GetAllCollaborators();
         }
 
         //delete
-        public Task<int> DeleteCollaborator(string cid, string nid)
+        public Task<string> DeleteCollaborator(string cid, string nid)
         {
-            return (person2.DeleteCollaborator(cid,nid));
+            return (collaborator.DeleteCollaborator(cid,nid));
         }
     }
 }
