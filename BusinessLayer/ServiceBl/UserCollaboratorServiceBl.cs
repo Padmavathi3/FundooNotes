@@ -13,9 +13,9 @@ namespace BusinessLayer.ServiceBl
     {
         private readonly IUserCollaborator  collaborator;
 
-        public UserCollaboratorServiceBl(IUserCollaborator person2)
+        public UserCollaboratorServiceBl(IUserCollaborator collaborator)
         {
-            this.collaborator = person2;
+            this.collaborator = collaborator;
         }
 
         //Insertion
