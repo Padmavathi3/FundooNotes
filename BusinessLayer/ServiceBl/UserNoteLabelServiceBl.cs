@@ -13,9 +13,9 @@ namespace BusinessLayer.ServiceBl
     {
         private readonly IUserNoteLabel label;
 
-        public UserNoteLabelServiceBl(IUserNoteLabel person3)
+        public UserNoteLabelServiceBl(IUserNoteLabel label)
         {
-            this.label = person3;
+            this.label = label;
         }
 
         public Task CreateLabel(string id, string name, string email)
