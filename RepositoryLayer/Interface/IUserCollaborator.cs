@@ -1,4 +1,4 @@
-﻿using RepositoryLayer.Entities;
+﻿using ModelLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +11,6 @@ namespace RepositoryLayer.Interface
     {
         public Task AddCollaborator(string cid, string nid, string email);
         public Task<IEnumerable<UserCollaborator>> GetAllCollaborators();
-        public Task<int> DeleteCollaborator(string cid,string nid);
+        public Task<string> DeleteCollaborator(string cid,string nid);
     }
 }

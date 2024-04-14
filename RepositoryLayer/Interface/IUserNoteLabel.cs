@@ -1,4 +1,4 @@
-﻿using RepositoryLayer.Entities;
+﻿using ModelLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +16,9 @@ namespace RepositoryLayer.Interface
         public Task<IEnumerable<UserNoteLabel>> GetUserNoteLabels();
 
         //update label name
-        public Task<int> UpdateName(string name, string id);
+        public Task<string> UpdateName(string name, string id);
 
         //delete
-        public Task<int> DeleteLabel(string name,string id);
+        public Task<string> DeleteLabel(string name,string id);
     }
 }

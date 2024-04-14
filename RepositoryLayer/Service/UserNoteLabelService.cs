@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using ModelLayer.Entities;
 using RepositoryLayer.Context;
 using RepositoryLayer.CustomExceptions;
-using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -80,7 +80,7 @@ namespace RepositoryLayer.Service
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //update the label name
-        public async Task<int> UpdateName(string name, string id)
+        public async Task<string> UpdateName(string name, string id)
         {
             var check_label = "SELECT COUNT(*) FROM Label WHERE NoteId=@NoteId";
             var query = "UPDATE Label SET LabelName = @LabelName WHERE NoteId = @NoteId";
@@ -101,7 +101,7 @@ namespace RepositoryLayer.Service
                     rowsAffected = await connection.ExecuteAsync(query, parameters);
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"LabelName is updated";
                     }
                     else
                     {
@@ -120,39 +120,41 @@ namespace RepositoryLayer.Service
 
         //delete label
 
-        public async Task<int> DeleteLabel(string name,string id)
+        public async Task<string> DeleteLabel(string name, string id)
         {
-            var check_label = "SELECT COUNT(*) FROM Label WHERE LabelName=@LabelName and NoteId=@NoteId";
-            var query = "delete from Label where LabelName=@LabelName and NoteId=@NoteId";
-            var parameters = new DynamicParameters();
-            parameters.Add("@NoteId", id, DbType.String);
-            parameters.Add("@LabelName", @name, DbType.String);
+            var checkLabelQuery = "SELECT COUNT(*) FROM Label WHERE LabelName = @LabelName AND NoteId = @NoteId";
+            var deleteQuery = "DELETE FROM Label WHERE LabelName = @LabelName AND NoteId = @NoteId";
             int rowsAffected = 0;
+
             using (var connection = _context.CreateConnection())
             {
-                int labelCount = await connection.ExecuteScalarAsync<int>(check_label, new { LabelName = name, NoteId = id });
+                int labelCount = await connection.ExecuteScalarAsync<int>(checkLabelQuery, new { LabelName = name, NoteId = id });
 
                 if (labelCount == 0)
                 {
-                    throw new LabelNotFoundException($"Label is not present with this noteid");
+                    throw new LabelNotFoundException($"Label '{name}' is not associated with note '{id}'.");
                 }
+
                 try
                 {
-                    rowsAffected = await connection.ExecuteAsync(query, parameters);
+                    rowsAffected = await connection.ExecuteAsync(deleteQuery, new { LabelName = name, NoteId = id });
+
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"{rowsAffected} label(s) deleted";
                     }
-                   
+                    else
+                    {
+                        throw new Exception("An error occurred while deleting the label. Please try again later.");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("An error occurred while deleting the collaborator. Please try again later.", ex);
+                    throw new Exception("An error occurred while deleting the label. Please try again later.", ex);
                 }
-
-                return rowsAffected;
             }
         }
+
 
     }
 }

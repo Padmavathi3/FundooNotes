@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using ModelLayer.Entities;
 using RepositoryLayer.Context;
 using RepositoryLayer.CustomExceptions;
-using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using RepositoryLayer.NestdMethodsFolder;
 using System;
@@ -66,7 +66,7 @@ namespace RepositoryLayer.Service
 
         //update
 
-        public async Task<int> Update(string id,string emailid, string title,string description)
+        public async Task<string> Update(string id,string emailid, string title,string description)
         {
             var users = await GetAllNotes(id);
             var check_email= "SELECT COUNT(*) FROM UserNote WHERE EmailId = @EmailId";
@@ -98,7 +98,7 @@ namespace RepositoryLayer.Service
                     rowsAffected = await connection.ExecuteAsync(query, parameters);
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"updation done successfully";
                     }
                     else
                     {
@@ -113,7 +113,7 @@ namespace RepositoryLayer.Service
 
         //delete the userNote based on email and user note id
 
-        public async Task<int> DeleteNote(string id,string email)
+        public async Task<string> DeleteNote(string id,string email)
         {
             var users = await GetAllNotes(id);
             var check_email = "SELECT COUNT(*) FROM UserNote WHERE EmailId = @EmailId";
@@ -137,11 +137,11 @@ namespace RepositoryLayer.Service
                     rowsAffected = await connection.ExecuteAsync(query, new { EmailId = email,NoteId=id });
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"rowsAffected notes deleted";
                     }
                     else
                     {
-                        throw new NoRowEffected("LogOut is not done successfully..........");
+                        throw new NoRowEffected("Note Is Not not deleted successfully..........");
                     }
 
                 }
@@ -149,51 +149,6 @@ namespace RepositoryLayer.Service
         }
         //-----------------------------------------------------------------------------------------------------------------------------------
 
-        //send the note into trash
-
-        public async Task<int> MoveToTrash(string id, string emailid)
-        {
-            var users = await GetAllNotes(id);
-            var check_email = "SELECT COUNT(*) FROM UserNote WHERE EmailId = @EmailId";
-            if (!users.Any())
-            {
-                // If no users are found with the given email, throw custom exception
-                throw new IdNotFoundException("note id does not exist.");
-           
-            }
-            else
-            {
-
-
-                var query = "UPDATE UserNote set isTrash = 'true' WHERE NoteId=@NoteId";
-                var parameters = new DynamicParameters();
-                parameters.Add("@EmailId", emailid, DbType.String);
-                parameters.Add("@NoteId", id, DbType.String);
-
-                int rowsAffected = 0;
-                using (var connection = _context.CreateConnection())
-                {
-                    int emailCount = await connection.ExecuteScalarAsync<int>(check_email, new { EmailId = emailid });
-
-                    if (emailCount == 0)
-                    {
-                        throw new EmailNotFoundException($"email '{emailid}' Is Not A Registerd User please Register First and try Again.");
-                    }
-                    rowsAffected = await connection.ExecuteAsync(query, parameters);
-                    if (rowsAffected > 0)
-                    {
-                        return rowsAffected;
-                    }
-                    else
-                    {
-                        throw new ParameterException("title and description must be required..........");
-                    }
-
-
-                }
-            }
-        }
-        //------------------------------------------------------------------------------------------------------------------------------
     }
 }
 

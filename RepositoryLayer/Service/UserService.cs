@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using ModelLayer.Entities;
 using RepositoryLayer.Context;
 using RepositoryLayer.CustomExceptions;
-using RepositoryLayer.Entities;
 using RepositoryLayer.Exceptions;
 using RepositoryLayer.Interface;
 using RepositoryLayer.NestdMethodsFolder;
@@ -27,14 +27,9 @@ namespace RepositoryLayer.Service
         }
 
         //Logic for inserting records
-        public async Task Insertion(string firstname, string lastname, string emailid, string password)
+        public async Task<int> Insertion(string firstname, string lastname, string emailid, string password)
         {
-            if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname) || string.IsNullOrEmpty(emailid) || string.IsNullOrEmpty(password))
-            {
-                throw new ArgumentsException("All parameters (firstname, lastname, emailid, password) are required..........");
-            }
-
-            var query = "insert into Person(FirstName,LastName,EmailId,Password) values(@FirstName,@LastName,@EmailId,@Password)";
+            var query = "insert into Person(FirstName, LastName, EmailId, Password) values(@FirstName, @LastName, @EmailId, @Password)";
 
             string encryptedPassword = NestedMethodsClass.EncryptPassword(password);
 
@@ -46,7 +41,7 @@ namespace RepositoryLayer.Service
 
             using (var connection = _context.CreateConnection())
             {
-                await connection.ExecuteAsync(query, parameters);
+                return await connection.ExecuteAsync(query, parameters);
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -57,28 +52,25 @@ namespace RepositoryLayer.Service
         {
             var query = "SELECT * FROM Person";
 
-
             using (var connection = _context.CreateConnection())
             {
-                var person = await connection.QueryAsync<User>(query);
-                if (person != null)
+                var persons = await connection.QueryAsync<User>(query);
+
+                if (persons.Any())
                 {
-                    return person.ToList();
+                    return persons;
                 }
                 else
                 {
-                    //return Enumerable.Empty<User>();
-                    throw new EmptyListException("no one user is present in table.............");
+                    throw new EmptyListException("No user is present in the table.");
                 }
-
             }
-
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
         //update password using email
 
-        public async Task<int> ResetPasswordByEmail(string emailid, string newPassword)
+        private async Task<string> ResetPasswordByEmail(string emailid, string newPassword)
         {
             var users = await GetUsersByEmail(emailid);
             if (!users.Any())
@@ -87,9 +79,7 @@ namespace RepositoryLayer.Service
                 throw new EmailNotFoundException("Email does not exist.");
             }
             else
-            {
-               
-               
+            {  
                 var query = "UPDATE Person SET Password = @NewPassword WHERE EmailId = @Email";
                 var parameters = new DynamicParameters();
                 parameters.Add("@NewPassword", newPassword, DbType.String);
@@ -101,7 +91,7 @@ namespace RepositoryLayer.Service
                     rowsAffected = await connection.ExecuteAsync(query, parameters);
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"password is updated";
                     }
                     else
                     {
@@ -116,13 +106,20 @@ namespace RepositoryLayer.Service
 
         //Get the user details based on email
 
-        public async Task<IEnumerable<User>>GetUsersByEmail(string email)
+        public async Task<IEnumerable<User>> GetUsersByEmail(string email)
         {
             var query = "select * from Person WHERE EmailId = @EmailId";
             using (var connection = _context.CreateConnection())
             {
-                var person = await connection.QueryAsync<User>(query, new { EmailId = email });
-                return person.ToList(); // Assuming there's only one user per email
+                var persons = await connection.QueryAsync<User>(query, new { EmailId = email });
+                if (persons.Any())
+                {
+                    return persons;
+                }
+                else
+                {
+                    throw new EmptyListException("No user is present in the table.");
+                }
             }
 
         }
@@ -130,7 +127,7 @@ namespace RepositoryLayer.Service
 
         //delete the user based on email
 
-        public async Task<int> DeleteUserByEmail(string email)
+        public async Task<string> DeleteUserByEmail(string email)
         {
             var users = await GetUsersByEmail(email);
             int rowsAffected = 0;
@@ -147,7 +144,7 @@ namespace RepositoryLayer.Service
                     rowsAffected=await connection.ExecuteAsync(query, new { EmailId = email });
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"rowsAffected user is deleted";
                     }
                     else
                     {
@@ -225,38 +222,47 @@ namespace RepositoryLayer.Service
         }
 
         //----------------------------------------------------------------------------------------------------------------------
-        public Task<string> ChangePassword(string otp, string password)
+
+        public async Task<string> ChangePassword(string otp, string password)
         {
-            if (otp.Equals(null))
+            if (string.IsNullOrEmpty(otp))
             {
-                return Task.FromResult("Generate Otp First");
+                return "Generate OTP First";
             }
+
             if (NestedMethodsClass.DecryptPassword(entity.Password).Equals(password))
             {
-                throw new PasswordMissmatchException("Dont give the existing password");
+                throw new PasswordMissmatchException("Don't give the existing password");
             }
 
-            if (Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,16}$"))
+            if (!Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,16}$"))
             {
-                if (otp.Equals(otp))
-                {
-                    if (ResetPasswordByEmail(mailid, NestedMethodsClass.EncryptPassword(password)).Result == 1)
-                    {
-                        entity = null; otp = null; mailid = null;
-                        return Task.FromResult("password changed successfully");
-                    }
-                }
-                else
-                {
-                    return Task.FromResult("otp miss matching");
-                }
+                return "Password does not meet complexity requirements";
             }
-            else
-            {
-                return Task.FromResult("regex is mismatching");
-            }
-            return Task.FromResult("password not changed");
 
+            if (!otp.Equals(otp))
+            {
+                return "OTP mismatch";
+            }
+
+            try
+            {
+                var result = await ResetPasswordByEmail(mailid, NestedMethodsClass.EncryptPassword(password));
+                entity = null;
+                otp = null;
+                mailid = null;
+                return result;
+            }
+            catch (EmailNotFoundException ex)
+            {
+                return ex.Message;
+            }
+            catch (ParameterException ex)
+            {
+                return ex.Message;
+            }
         }
+
+
     }
 }

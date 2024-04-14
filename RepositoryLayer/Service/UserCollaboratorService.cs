@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using ModelLayer.Entities;
 using RepositoryLayer.Context;
 using RepositoryLayer.CustomExceptions;
-using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections;
@@ -80,21 +80,21 @@ namespace RepositoryLayer.Service
         //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        
-        public async Task<int> DeleteCollaborator(string cid, string nid)
+
+        public async Task<string> DeleteCollaborator(string cid, string nid)
         {
             // Check if the collaborator exists in the Collaborators table
-            var check_id = "SELECT COUNT(*) FROM Collaborators WHERE CollaboratorId = @CollaboratorId AND NoteId = @NoteId";
+            var checkIdQuery = "SELECT COUNT(*) FROM Collaborators WHERE CollaboratorId = @CollaboratorId AND NoteId = @NoteId";
             var deleteQuery = "DELETE FROM Collaborators WHERE CollaboratorId = @CollaboratorId AND NoteId = @NoteId";
             int rowsAffected = 0;
 
             using (var connection = _context.CreateConnection())
             {
-                int idCount = await connection.ExecuteScalarAsync<int>(check_id, new { CollaboratorId = cid, NoteId = nid });
+                int idCount = await connection.ExecuteScalarAsync<int>(checkIdQuery, new { CollaboratorId = cid, NoteId = nid });
 
                 if (idCount == 0)
                 {
-                    throw new EmailNotFoundException($"Collaborator with ID {cid} is not a registered user. Please register first and try again.");
+                    throw new EmailNotFoundException($"Collaborator with ID {cid} is not associated with the specified note.");
                 }
 
                 try
@@ -104,17 +104,20 @@ namespace RepositoryLayer.Service
 
                     if (rowsAffected > 0)
                     {
-                        return rowsAffected;
+                        return $"{rowsAffected} collaborator(s) deleted";
+                    }
+                    else
+                    {
+                        throw new Exception("An error occurred while deleting the collaborator. Please try again later.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("An error occurred while deleting the collaborator. Please try again later.", ex);
+                    throw new Exception("An error occurred while deleting the collaborator. Please try again later.");
                 }
             }
-
-            return rowsAffected;
         }
+
 
     }
 }

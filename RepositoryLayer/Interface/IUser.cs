@@ -1,4 +1,4 @@
-﻿using RepositoryLayer.Entities;
+﻿using ModelLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +10,16 @@ namespace RepositoryLayer.Interface
     public interface IUser
     {
         //Insertion
-        public Task Insertion(string firstname, string lastname, string emailid, string password);
+        public Task<int> Insertion(string firstname, string lastname, string emailid, string password);
 
         //Get
         public Task<IEnumerable<User>> GetUsers();
-
-       //Reset Password
-        public Task<int> ResetPasswordByEmail(string emailid, string newPassword);
 
        //Get user details based on email
         public Task<IEnumerable<User>> GetUsersByEmail(string email);
 
         //delete
-        public Task<int> DeleteUserByEmail(string email);
+        public Task<string> DeleteUserByEmail(string email);
 
         //login
         public Task<IEnumerable<User>> Login(string email, string password);
