@@ -15,9 +15,9 @@ namespace BusinessLayer.ServiceBl
     {
         private readonly IUserNote note;
 
-        public UserNoteServiceBl(IUserNote person1)
+        public UserNoteServiceBl(IUserNote note)
         {
-            this.note = person1;
+            this.note = note;
         }
 
         public Task CreateNote(string id, string title, string description, DateTime reminder, string archieve, string pinned, string trash, string email)
