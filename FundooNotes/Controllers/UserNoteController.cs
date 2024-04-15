@@ -19,7 +19,7 @@ namespace FundooNotes.Controllers
 
         //----------------------------------------------------------------------------------------------
 
-        [HttpPost("CreateNote")]
+        [HttpPost]
         public async Task<IActionResult> CreateNote(UserNote updateDto1)
         {
             try
@@ -36,7 +36,7 @@ namespace FundooNotes.Controllers
         //-------------------------------------------------------------------------------------------------------------------------------------
 
         //Display user note details details based on id
-        [HttpGet("GetNotesById")]
+        [HttpGet]
         public async Task<IActionResult> GetAllNotes(string id)
         {
             try
@@ -51,8 +51,8 @@ namespace FundooNotes.Controllers
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
-        [HttpPut("UpdateNoteByIdAndEmail")]
-        public async Task<IActionResult> Update(string id,string emailid, [FromBody] UserNote updateDto1)
+        [HttpPut]
+        public async Task<IActionResult> Update(string id,string emailid,UserNote updateDto1)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace FundooNotes.Controllers
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
        
-        [HttpDelete("DeleteNoteByIdAndEmail")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteNote(string id,string email)
         {
             try
