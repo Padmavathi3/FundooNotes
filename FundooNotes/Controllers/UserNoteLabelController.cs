@@ -10,15 +10,14 @@ namespace FundooNotes.Controllers
     public class UserNoteLabelController : ControllerBase
     {
         private readonly IUserNoteLabelBl labelbl;
-        private readonly IConfiguration configuration;
-        public UserNoteLabelController(IUserNoteLabelBl labelbl, IConfiguration configuration)
+       
+        public UserNoteLabelController(IUserNoteLabelBl labelbl)
         {
             this.labelbl = labelbl;
-            this.configuration = configuration;
         }
 
         //----------------------------------------------------------------------------------------------
-        [HttpPost("AddLabel")]
+        [HttpPost]
         public async Task<IActionResult> CreateLabel(UserNoteLabel updateDto3)
         {
             try
@@ -28,14 +27,13 @@ namespace FundooNotes.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception
-                //return StatusCode(500, "An error occurred while inserting values");
+                
                 return BadRequest(ex.Message);
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpGet("GetAllLabels")]
+        [HttpGet]
         public async Task<IActionResult> GetUserNoteLabels()
         {
             try
@@ -45,29 +43,29 @@ namespace FundooNotes.Controllers
             }
             catch (Exception ex)
             {
-                //log error
+                
                 return BadRequest(ex.Message);
             }
         }
         //--------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpPut("UpdateLabelNameById")]
+        [HttpPut]
         public async Task<IActionResult> UpdateName(string name, string id)
         {
             try
             {
                 return Ok(await labelbl.UpdateName(name,id));
-                //return Ok("User password updated successfully");
+                
             }
             catch (Exception ex)
             {
-                // Log the exception
+                
                 return BadRequest(ex.Message);
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpDelete("DeleteLabelNameById")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteLabel(string name, string id)
         {
             try
@@ -78,7 +76,7 @@ namespace FundooNotes.Controllers
             }
             catch (Exception ex)
             {
-                // Log error
+                
                 return BadRequest(ex.Message);
             }
         }
