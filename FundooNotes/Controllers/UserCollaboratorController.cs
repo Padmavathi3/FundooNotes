@@ -19,7 +19,7 @@ namespace FundooNotes.Controllers
 
         //----------------------------------------------------------------------------------------------
 
-        [HttpPost("AddCollaborator")]
+        [HttpPost]
         public async Task<IActionResult> AddCollaborator(UserCollaborator updateDto2)
         {
             try
@@ -35,7 +35,7 @@ namespace FundooNotes.Controllers
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------
-        [HttpGet("GetAllCollaborators")]
+        [HttpGet]
         public async Task<IActionResult> GetAllCollaborators()
         {
             try
@@ -51,7 +51,7 @@ namespace FundooNotes.Controllers
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpDelete("DeleteCollaboratorById")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteCollaborator(string cid,string nid)
         {
             try
