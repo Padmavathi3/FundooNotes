@@ -84,7 +84,7 @@ namespace FundooNotes.Controllers
             }
         }
         //---------------------------------------------------------------------------------------------------------------------------------------------
-        [HttpGet("GetUsersList")]
+        [HttpGet]
         public async Task<IActionResult> GetUsersList()
         {
             try
@@ -170,7 +170,7 @@ namespace FundooNotes.Controllers
 
         //-----------------------------------------------------------------------------------------------------------------------------------------
 
-        [HttpDelete("DeleteUserByEmail")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteUserByEmail(string email)
         {
             try
